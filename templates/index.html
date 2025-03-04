@@ -17,19 +17,33 @@
   <div>
     {% for quiz in quizs_id %}
 
-      <a href="{{ url_for('quiz', id=quiz['id']) }}">
+      <a class="quiz" href="{{ url_for('quiz', id=quiz['id']) }}">
+
         <div>
-          <div>
-            <p>
-              banner {{ quiz['manga'] }}
-            </p>
+
+          <div class="banner">
+            <img src="{{ url_for('static', filename='imgs/berserkBanner.jpg') }}" alt="banner de berserk">
           </div>
-          <div>
-            <h2>
-              {{ quiz['manga']}}
-            </h2>
+
+          <div class="quiz-informations">
+            <div class="manga-name">
+              <h2>
+                {{ quiz['manga']}}
+              </h2>
+            </div>
+
+            <div class="manga-questions-numbers">
+              <p>
+                Perguntas do quiz: <b>
+                  {{ quiz['questions'] }}
+                </b>
+              </p>
+            </div>
           </div>
-        </div>        
+
+
+        </div>    
+        
       </a>
 
     {% endfor %}
