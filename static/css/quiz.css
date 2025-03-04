@@ -1,0 +1,44 @@
+ol.number-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  margin: 2.6rem 0;
+  padding: 1.4rem;
+  border: 1px solid #000000;
+  border-radius: 2rem 0rem 2rem 0rem ;
+
+
+
+}
+
+ol {
+  list-style-type: none;
+}
+
+.card ol li {
+  width: 100%;
+
+  border: 1px solid #000000;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  margin: 1rem 0rem;
+  
+
+  box-shadow: 0 0 0.4rem  rgba(0, 7, 20, 0.3);
+  transition: all 0.28s ease-in-out;
+
+}
+
+.correct {
+  box-shadow: 0 0 0.4rem #04ff04;
+  background-color: #04e004;
+  color: white;
+}
+.incorrect {
+  box-shadow: 0 0 0.4rem #ff0202;
+  background-color: #e20000;
+  color: white;
+}

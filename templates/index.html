@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+  <meta name="keywords" content="manga, mangá, berserk, one piece, quiz">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mangá Quiz</title>
+</head>
+<body>
+  <div>
+    <h1>
+      Mangá Quiz
+    </h1>
+  </div>
+
+  <div>
+    {% for quiz in quizs_id %}
+
+      <a href="{{ url_for('quiz', id=quiz['id']) }}">
+        <div>
+          <div>
+            <p>
+              banner {{ quiz['manga'] }}
+            </p>
+          </div>
+          <div>
+            <h2>
+              {{ quiz['manga']}}
+            </h2>
+          </div>
+        </div>        
+      </a>
+
+    {% endfor %}
+  </div>
+
+</body>
+</html>

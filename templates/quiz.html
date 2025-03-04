@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz {{ quiz['manga'] }}</title>
+</head>
+<body>
+
+  <div>
+    <h1>
+      {{ quiz['manga'] }}
+    </h1>
+  </div>
+
+  <ol class="number-list">
+    {% for question in quiz['questions'] %}
+
+      <div class="card">
+        
+        <li>
+          <h2>
+            {{ question['question'] }}
+          </h2>
+        </li>
+
+        <div>
+          <ol>
+
+            {% for option in question['options'] %}
+
+              <li class="option" data-correct="{{ option['correct']}}"> {{ option['content'] }} </li>
+
+            {% endfor %}
+            
+          </ol>
+        </div>
+
+      </div>
+
+    {% endfor %}
+  </ol>
+
+  <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+
+</body>
+</html>
